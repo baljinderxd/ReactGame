@@ -4,7 +4,7 @@ import './App.css';
 import Icon from "./components/Icon";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
- 
+import {IoReloadCircle} from 'react-icons/io5';
  import {Card,CardBody,Button,Container,Col,Row} from 'reactstrap';
  const itemArr=new Array(9).fill("empty");
 
@@ -12,6 +12,7 @@ const App=()=> {
   
   const [isCross,setIsCross]=useState(false);
   const[winMessage,setWinMessage]=useState("");
+ // const[score,setScore]=useState("");
 
  const reloadGame=()=>{
 
@@ -63,6 +64,10 @@ const App=()=> {
 
   //
  } 
+
+//  const changeScore=()=>{
+//    if()
+//  }
  const changeItem=itemNumber=>{
       if(winMessage){
       return toast(winMessage,{type:"success"});
@@ -107,16 +112,19 @@ const App=()=> {
           <Col md={6} className="offset-md-3">
             {winMessage?(
               <div className="mb-3 mt-3">
-                <h1 className="text-warning text-uppercase text-center">
+                <h1 className="text-primary text-uppercase text-center">
                   {winMessage}
                 </h1>
-                <Button color="warning" block  onClick={reloadGame}>"Reload the Game" </Button>
+                <Button className="btn btn-info has-spinner" onClick={reloadGame}><span><IoReloadCircle  className="icons" style={{color:"white"}}/> </span>Reload</Button>
               </div>
             ):(
-              <h1 className="mb-4 mt-4 text-center text-light " >
-                {isCross?"Cross Turns": "Circle Turns"}
+              <div className="mb-4 mt-4 text-center " >
+                {isCross?(
+                  <h1 className="text-danger">Cross Turns</h1>
+
+                ):<h1 className="text-success">Circle Turns</h1>}
                 
-              </h1>
+              </div>
             )}
             <div className="grid">
               {itemArr.map((item,index)=>(
