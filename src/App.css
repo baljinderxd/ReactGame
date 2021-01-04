@@ -11,7 +11,7 @@ body {
 }
 
 .box {
-  background-color: #240d4a;
+  background-color: #f9f9fa;
   width: auto;
   height: 100px;
   display: flex;
@@ -20,5 +20,5 @@ body {
 }
 .icons {
   font-size: 35px;
-  color: #ffffff;
+  color: #080808;
 }
