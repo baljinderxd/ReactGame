@@ -5,14 +5,15 @@ import Icon from "./components/Icon";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {IoReloadCircle} from 'react-icons/io5';
- import {Card,CardBody,Button,Container,Col,Row} from 'reactstrap';
+ import {Card,CardBody,Button,Container,Col,Row,Badge} from 'reactstrap';
  const itemArr=new Array(9).fill("empty");
 
 const App=()=> {
   
   const [isCross,setIsCross]=useState(false);
   const[winMessage,setWinMessage]=useState("");
- // const[score,setScore]=useState("");
+  const[circleScore,setCircleScore]=useState(0);
+  const[crossScore,setCrossScore]=useState(0);
 
  const reloadGame=()=>{
 
@@ -26,34 +27,74 @@ const App=()=> {
     if(itemArr[0]===itemArr[1] && itemArr[0]===itemArr[2] && itemArr[0]!=="empty"){
 
       setWinMessage(`${itemArr[0]} wins`);
+      if(itemArr[0]=='circle'){
+        setCircleScore(circleScore+1);
+      }
+      else
+      setCrossScore(crossScore+1);
     }
     else if(itemArr[3]===itemArr[4] && itemArr[3]===itemArr[5] && itemArr[3]!=="empty"){
 
       setWinMessage(`${itemArr[3]} wins`);
+      if(itemArr[3]=='circle'){
+        setCircleScore(circleScore+1);
+      }
+      else
+      setCrossScore(crossScore+1);
     }
     else if(itemArr[6]===itemArr[7] && itemArr[6]===itemArr[8] && itemArr[6]!=="empty"){
 
       setWinMessage(`${itemArr[6]} wins`);
+     if(itemArr[6]=='circle'){
+        setCircleScore(circleScore+1);
+      }
+      else
+      setCrossScore(crossScore+1);
     }
     else if(itemArr[0]===itemArr[3] && itemArr[0]===itemArr[6] && itemArr[0]!=="empty"){
 
       setWinMessage(`${itemArr[0]} wins`);
+     if(itemArr[0]=='circle'){
+        setCircleScore(circleScore+1);
+      }
+      else
+      setCrossScore(crossScore+1);
     }
     else if(itemArr[1]===itemArr[4] && itemArr[1]===itemArr[7] && itemArr[1]!=="empty"){
 
       setWinMessage(`${itemArr[1]} wins`);
+     if(itemArr[1]=='circle'){
+        setCircleScore(circleScore+1);
+      }
+      else
+      setCrossScore(crossScore+1);
     }
     else if(itemArr[2]===itemArr[5] && itemArr[2]===itemArr[8] && itemArr[2]!=="empty"){
 
       setWinMessage(`${itemArr[2]} wins`);
+     if(itemArr[2]=='circle'){
+        setCircleScore(circleScore+1);
+      }
+      else
+      setCrossScore(crossScore+1);
     }
     else if(itemArr[0]===itemArr[4] && itemArr[0]===itemArr[8] && itemArr[0]!=="empty"){
 
       setWinMessage(`${itemArr[0]} wins`);
+     if(itemArr[0]=='circle'){
+        setCircleScore(circleScore+1);
+      }
+      else
+      setCrossScore(crossScore+1);
     }
     else if(itemArr[2]===itemArr[4] && itemArr[2]===itemArr[6] && itemArr[2]!=="empty"){
 
       setWinMessage(`${itemArr[2]} wins`);
+     if(itemArr[2]=='circle'){
+        setCircleScore(circleScore+1);
+      }
+      else
+      setCrossScore(crossScore+1);
     }
     
     else if(itemArr[0]!=="empty"&&itemArr[1]!=="empty"&&itemArr[2]!=="empty"&&itemArr[3]!=="empty"&&itemArr[4]!=="empty"&&itemArr[5]!=="empty"&&itemArr[6]!=="empty"&&itemArr[7]!=="empty"&&itemArr[8]!=="empty" ){
@@ -107,6 +148,9 @@ const App=()=> {
     
     <Container className="p-5">
        <ToastContainer position="bottom-center"/> 
+       
+       <h3 style={{color:"white"}}>Circle Score <Badge color="secondary">{circleScore}</Badge></h3>
+       <h3 style={{color:"white"}}>Cross Score <Badge color="secondary">{crossScore}</Badge></h3>
        <Row>
           
           <Col md={6} className="offset-md-3">
