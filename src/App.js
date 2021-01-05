@@ -27,7 +27,7 @@ const App=()=> {
     if(itemArr[0]===itemArr[1] && itemArr[0]===itemArr[2] && itemArr[0]!=="empty"){
 
       setWinMessage(`${itemArr[0]} wins`);
-      if(itemArr[0]=='circle'){
+      if(itemArr[0]==='circle'){
         setCircleScore(circleScore+1);
       }
       else
@@ -36,7 +36,7 @@ const App=()=> {
     else if(itemArr[3]===itemArr[4] && itemArr[3]===itemArr[5] && itemArr[3]!=="empty"){
 
       setWinMessage(`${itemArr[3]} wins`);
-      if(itemArr[3]=='circle'){
+      if(itemArr[3]==='circle'){
         setCircleScore(circleScore+1);
       }
       else
@@ -45,7 +45,7 @@ const App=()=> {
     else if(itemArr[6]===itemArr[7] && itemArr[6]===itemArr[8] && itemArr[6]!=="empty"){
 
       setWinMessage(`${itemArr[6]} wins`);
-     if(itemArr[6]=='circle'){
+     if(itemArr[6]==='circle'){
         setCircleScore(circleScore+1);
       }
       else
@@ -54,7 +54,7 @@ const App=()=> {
     else if(itemArr[0]===itemArr[3] && itemArr[0]===itemArr[6] && itemArr[0]!=="empty"){
 
       setWinMessage(`${itemArr[0]} wins`);
-     if(itemArr[0]=='circle'){
+     if(itemArr[0]==='circle'){
         setCircleScore(circleScore+1);
       }
       else
@@ -63,7 +63,7 @@ const App=()=> {
     else if(itemArr[1]===itemArr[4] && itemArr[1]===itemArr[7] && itemArr[1]!=="empty"){
 
       setWinMessage(`${itemArr[1]} wins`);
-     if(itemArr[1]=='circle'){
+     if(itemArr[1]==='circle'){
         setCircleScore(circleScore+1);
       }
       else
@@ -72,7 +72,7 @@ const App=()=> {
     else if(itemArr[2]===itemArr[5] && itemArr[2]===itemArr[8] && itemArr[2]!=="empty"){
 
       setWinMessage(`${itemArr[2]} wins`);
-     if(itemArr[2]=='circle'){
+     if(itemArr[2]==='circle'){
         setCircleScore(circleScore+1);
       }
       else
@@ -81,7 +81,7 @@ const App=()=> {
     else if(itemArr[0]===itemArr[4] && itemArr[0]===itemArr[8] && itemArr[0]!=="empty"){
 
       setWinMessage(`${itemArr[0]} wins`);
-     if(itemArr[0]=='circle'){
+     if(itemArr[0]==='circle'){
         setCircleScore(circleScore+1);
       }
       else
@@ -90,7 +90,7 @@ const App=()=> {
     else if(itemArr[2]===itemArr[4] && itemArr[2]===itemArr[6] && itemArr[2]!=="empty"){
 
       setWinMessage(`${itemArr[2]} wins`);
-     if(itemArr[2]=='circle'){
+     if(itemArr[2]==='circle'){
         setCircleScore(circleScore+1);
       }
       else
