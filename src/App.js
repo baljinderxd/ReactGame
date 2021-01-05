@@ -164,9 +164,9 @@ const App=()=> {
             ):(
               <div className="mb-4 mt-4 text-center " >
                 {isCross?(
-                  <h1 className="text-danger">Cross Turns</h1>
+                  <h1 className="text-danger">Cross Turn</h1>
 
-                ):<h1 className="text-success">Circle Turns</h1>}
+                ):<h1 className="text-success">Circle Turn</h1>}
                 
               </div>
             )}
