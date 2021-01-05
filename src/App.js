@@ -28,7 +28,7 @@ const App=()=> {
     if(itemArr[0]===itemArr[1] && itemArr[0]===itemArr[2] && itemArr[0]!=="empty"){
 
       setWinMessage(`${itemArr[0]} wins`);
-      
+
       if(itemArr[0]==='circle'){
         setCircleScore(circleScore+1);
       }
@@ -153,15 +153,15 @@ const App=()=> {
     <Container className="p-5">
        <ToastContainer position="bottom-center"/> 
        <Row>
-         <Col>
-       <h3 style={{color:"white"}}>Circle Score <Badge color="secondary">{circleScore}</Badge></h3>
+         <Col md={4}>
+       <h4 style={{color:"white"}}>Circle Score <Badge color="secondary">{circleScore}</Badge></h4>
        </Col>
-       <Col>
-       <h3 style={{color:"white"}}>Draw Matches <Badge color="secondary">{draw}</Badge></h3>
+       <Col md={4}>
+       <h4 style={{color:"white"}}>Draw Match <Badge color="secondary">{draw}</Badge></h4>
        
        </Col>
-       <Col>
-       <h3 style={{color:"white"}}>Cross Score <Badge color="secondary">{crossScore}</Badge></h3>
+       <Col md={4}>
+       <h4 style={{color:"white"}}>Cross Score <Badge color="secondary">{crossScore}</Badge></h4>
        </Col>
        </Row>
        <Row>
