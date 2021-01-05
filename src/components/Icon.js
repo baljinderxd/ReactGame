@@ -1,5 +1,5 @@
 import React from 'react';
-import {FaTimes,FaRegCircle,FaPen} from 'react-icons/fa';
+import {FaTimes,FaRegCircle} from 'react-icons/fa';
 
 const Icon =({name})=>{
     
@@ -10,7 +10,9 @@ const Icon =({name})=>{
             case 'cross':
             return <FaTimes className="icons" style={{color:" #e00910"}}/> 
             default:
-             return <FaPen className="icons" size={25}/> 
+                    return ("")
+        //     default:
+        //      return <FaPen className="icons" size={25}/> 
         }
         
     

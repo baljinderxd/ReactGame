@@ -14,6 +14,7 @@ const App=()=> {
   const[winMessage,setWinMessage]=useState("");
   const[circleScore,setCircleScore]=useState(0);
   const[crossScore,setCrossScore]=useState(0);
+  const[draw,setDraw]=useState(0);
 
  const reloadGame=()=>{
 
@@ -27,6 +28,7 @@ const App=()=> {
     if(itemArr[0]===itemArr[1] && itemArr[0]===itemArr[2] && itemArr[0]!=="empty"){
 
       setWinMessage(`${itemArr[0]} wins`);
+      
       if(itemArr[0]==='circle'){
         setCircleScore(circleScore+1);
       }
@@ -100,6 +102,7 @@ const App=()=> {
     else if(itemArr[0]!=="empty"&&itemArr[1]!=="empty"&&itemArr[2]!=="empty"&&itemArr[3]!=="empty"&&itemArr[4]!=="empty"&&itemArr[5]!=="empty"&&itemArr[6]!=="empty"&&itemArr[7]!=="empty"&&itemArr[8]!=="empty" ){
       
       setWinMessage("Match Draw");
+      setDraw(draw+1);
       
     }
 
@@ -109,6 +112,7 @@ const App=()=> {
 //  const changeScore=()=>{
 //    if()
 //  }
+
  const changeItem=itemNumber=>{
       if(winMessage){
       return toast(winMessage,{type:"success"});
@@ -148,9 +152,18 @@ const App=()=> {
     
     <Container className="p-5">
        <ToastContainer position="bottom-center"/> 
-       
+       <Row>
+         <Col>
        <h3 style={{color:"white"}}>Circle Score <Badge color="secondary">{circleScore}</Badge></h3>
+       </Col>
+       <Col>
+       <h3 style={{color:"white"}}>Draw Matches <Badge color="secondary">{draw}</Badge></h3>
+       
+       </Col>
+       <Col>
        <h3 style={{color:"white"}}>Cross Score <Badge color="secondary">{crossScore}</Badge></h3>
+       </Col>
+       </Row>
        <Row>
           
           <Col md={6} className="offset-md-3">
